@@ -26,4 +26,11 @@ function dragLeave(e) {
 }
 function drop(e) {
   e.target.classList.remove('drag-over')
+  // get the draggable element
+  const id = e.dataTransfer.getData('text/plain')
+  const draggable = document.getElementById(id)
+  //add it to the drop target
+  e.target.appendChild(draggable)
+  //display the draggable element
+  draggable.classList.remove('hide')
 }
